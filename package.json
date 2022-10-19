@@ -1,0 +1,29 @@
+{
+  "name": "grpc-web",
+  "version": "1.0.0",
+  "description": "gRPC-Web simple example",
+  "scripts": {
+    "proto:server": "sh proto/build-server.sh",
+    "proto:client": "sh proto/build-client.sh",
+    "start:envoy": "sh envoy-start.sh",
+    "start:server": "ts-node server/index.ts",
+    "start:client": "parcel client/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.7.2",
+    "@grpc/proto-loader": "^0.7.3",
+    "@types/google-protobuf": "^3.7.2",
+    "grpc-web": "^1.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "grpc-tools": "^1.11.3",
+    "grpc_tools_node_protoc_ts": "^5.3.2",
+    "parcel": "^2.7.0"
+  }
+}
