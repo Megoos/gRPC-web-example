@@ -2,8 +2,10 @@
 
 PROTO_DIR=./client/proto
 
+mkdir ${PROTO_DIR}
+
 # Generate Types
-yarn proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --grpcLib=@grpc/grpc-js --outDir=${PROTO_DIR} proto/*.proto
+npx proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --grpcLib=@grpc/grpc-js --outDir=${PROTO_DIR} proto/*.proto
 
 # Generate JS and TS code
 protoc -I=./proto ./proto/*.proto \
