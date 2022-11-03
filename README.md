@@ -23,7 +23,7 @@ To generate the protobuf messages and client service stub class from your
 - the `protoc` binary, _and_
 - the `protoc-gen-grpc-web` plugin.
 
-> You can download the `protoc-gen-grpc-web` protoc plugin from our
+> You can download the `protoc-gen-grpc-web` protoc plugin from
 > [release](https://github.com/grpc/grpc-web/releases) page.
 >
 > If you don't already have `protoc` installed, you will have to download it

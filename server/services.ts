@@ -45,12 +45,12 @@ export const UsersServer: IUsersServer = {
     call.end();
   },
 
-  createUser(call: ServerReadableStream<Empty, User>, callback: sendUnaryData<Empty>) {
+  createUsers(call: ServerReadableStream<Empty, User>, callback: sendUnaryData<Empty>) {
     console.log(`createUsers: creating new users from stream.`);
 
     let userCount = 0;
 
-    call.on("data", (u) => {
+    call.on("data", (u: User) => {
       userCount++;
       users.push(u);
     });
@@ -59,5 +59,12 @@ export const UsersServer: IUsersServer = {
       console.log(`Created ${userCount} new user(s).`);
       callback(null, new Empty());
     });
+  },
+
+  createUser(call: ServerUnaryCall<User, Empty>, callback: sendUnaryData<Empty>) {
+    const user = call.request;
+    users.push(user);
+
+    callback(null, new Empty());
   },
 };

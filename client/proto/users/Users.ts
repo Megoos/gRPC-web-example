@@ -7,14 +7,23 @@ import type { User as _users_User, User__Output as _users_User__Output } from '.
 import type { UserRequest as _users_UserRequest, UserRequest__Output as _users_UserRequest__Output } from '../users/UserRequest';
 
 export interface UsersClient extends grpc.Client {
-  CreateUser(metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
-  CreateUser(metadata: grpc.Metadata, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
-  CreateUser(options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
-  CreateUser(callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
-  createUser(metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
-  createUser(metadata: grpc.Metadata, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
-  createUser(options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
-  createUser(callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  CreateUser(argument: _users_User, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  CreateUser(argument: _users_User, metadata: grpc.Metadata, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  CreateUser(argument: _users_User, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  CreateUser(argument: _users_User, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  createUser(argument: _users_User, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  createUser(argument: _users_User, metadata: grpc.Metadata, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  createUser(argument: _users_User, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  createUser(argument: _users_User, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientUnaryCall;
+  
+  CreateUsers(metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  CreateUsers(metadata: grpc.Metadata, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  CreateUsers(options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  CreateUsers(callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  createUsers(metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  createUsers(metadata: grpc.Metadata, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  createUsers(options: grpc.CallOptions, callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
+  createUsers(callback: grpc.requestCallback<_google_protobuf_Empty__Output>): grpc.ClientWritableStream<_users_User>;
   
   GetUser(argument: _users_UserRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_users_User__Output>): grpc.ClientUnaryCall;
   GetUser(argument: _users_UserRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_users_User__Output>): grpc.ClientUnaryCall;
@@ -33,7 +42,9 @@ export interface UsersClient extends grpc.Client {
 }
 
 export interface UsersHandlers extends grpc.UntypedServiceImplementation {
-  CreateUser: grpc.handleClientStreamingCall<_users_User__Output, _google_protobuf_Empty>;
+  CreateUser: grpc.handleUnaryCall<_users_User__Output, _google_protobuf_Empty>;
+  
+  CreateUsers: grpc.handleClientStreamingCall<_users_User__Output, _google_protobuf_Empty>;
   
   GetUser: grpc.handleUnaryCall<_users_UserRequest__Output, _users_User>;
   
@@ -43,6 +54,7 @@ export interface UsersHandlers extends grpc.UntypedServiceImplementation {
 
 export interface UsersDefinition extends grpc.ServiceDefinition {
   CreateUser: MethodDefinition<_users_User, _google_protobuf_Empty, _users_User__Output, _google_protobuf_Empty__Output>
+  CreateUsers: MethodDefinition<_users_User, _google_protobuf_Empty, _users_User__Output, _google_protobuf_Empty__Output>
   GetUser: MethodDefinition<_users_UserRequest, _users_User, _users_UserRequest__Output, _users_User__Output>
   GetUsers: MethodDefinition<_google_protobuf_Empty, _users_User, _google_protobuf_Empty__Output, _users_User__Output>
 }

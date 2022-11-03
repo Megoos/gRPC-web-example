@@ -83,6 +83,49 @@ export class UsersClient {
     this.methodDescriptorGetUser);
   }
 
+  methodDescriptorCreateUser = new grpcWeb.MethodDescriptor(
+    '/users.Users/CreateUser',
+    grpcWeb.MethodType.UNARY,
+    user_pb.User,
+    google_protobuf_empty_pb.Empty,
+    (request: user_pb.User) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  createUser(
+    request: user_pb.User,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  createUser(
+    request: user_pb.User,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  createUser(
+    request: user_pb.User,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/users.Users/CreateUser',
+        request,
+        metadata || {},
+        this.methodDescriptorCreateUser,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/users.Users/CreateUser',
+    request,
+    metadata || {},
+    this.methodDescriptorCreateUser);
+  }
+
   methodDescriptorGetUsers = new grpcWeb.MethodDescriptor(
     '/users.Users/GetUsers',
     grpcWeb.MethodType.SERVER_STREAMING,
